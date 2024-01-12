@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ABD30BC6-D49F-42C7-A2F5-1F3AC5CC906E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MainMenu</RootNamespace>
+    <AssemblyName>MainMenu</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Start1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Start5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\butstart 2.png" />
+    <Resource Include="images\butstart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\photo2pixel_download %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\photo2pixel_download %282%29 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\1663652027_g-10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\heart_icon.png" />
+    <Resource Include="images\sword_02c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\карта.png" />
+    <Resource Include="images\уровень2.jpg" />
+    <Resource Include="images\уровень1.png" />
+    <Resource Include="images\walk_8.gif" />
+    <Resource Include="images\walk_7.gif" />
+    <Resource Include="images\walk_6.gif" />
+    <Resource Include="images\walk_5.gif" />
+    <Resource Include="images\walk_4.gif" />
+    <Resource Include="images\walk_3.gif" />
+    <Resource Include="images\walk_2.gif" />
+    <Resource Include="images\walk_1.gif" />
+    <Resource Include="images\Скриншот 08-01-2024 191321.png" />
+    <Resource Include="images\character\idle_1.gif" />
+    <Resource Include="images\character\idle_10.gif" />
+    <Resource Include="images\character\idle_11.gif" />
+    <Resource Include="images\character\idle_2.gif" />
+    <Resource Include="images\character\idle_3.gif" />
+    <Resource Include="images\character\idle_4.gif" />
+    <Resource Include="images\character\idle_5.gif" />
+    <Resource Include="images\character\idle_6.gif" />
+    <Resource Include="images\character\idle_7.gif" />
+    <Resource Include="images\character\idle_8.gif" />
+    <Resource Include="images\character\idle_9.gif" />
+    <Resource Include="images\character\attack_1.gif" />
+    <Resource Include="images\character\attack_2.gif" />
+    <Resource Include="images\character\attack_3.gif" />
+    <Resource Include="images\character\attack_4.gif" />
+    <Resource Include="images\character\attack_5.gif" />
+    <Resource Include="images\character\attack_6.gif" />
+    <Resource Include="images\character\walk_1.gif" />
+    <Resource Include="images\character\walk_2.gif" />
+    <Resource Include="images\character\walk_3.gif" />
+    <Resource Include="images\character\walk_4.gif" />
+    <Resource Include="images\character\walk_5.gif" />
+    <Resource Include="images\character\walk_6.gif" />
+    <Resource Include="images\character\walk_7.gif" />
+    <Resource Include="images\character\walk_8.gif" />
+    <Resource Include="images\attack_1.gif" />
+    <Resource Include="images\attack_2.gif" />
+    <Resource Include="images\attack_3.gif" />
+    <Resource Include="images\attack_4.gif" />
+    <Resource Include="images\attack_5.gif" />
+    <Resource Include="images\attack_6.gif" />
+    <Resource Include="images\idle_1.gif" />
+    <Resource Include="images\idle_10.gif" />
+    <Resource Include="images\idle_11.gif" />
+    <Resource Include="images\idle_2.gif" />
+    <Resource Include="images\idle_3.gif" />
+    <Resource Include="images\idle_4.gif" />
+    <Resource Include="images\idle_5.gif" />
+    <Resource Include="images\idle_6.gif" />
+    <Resource Include="images\idle_7.gif" />
+    <Resource Include="images\idle_8.gif" />
+    <Resource Include="images\idle_9.gif" />
+    <Resource Include="images\monsters\idle_1.gif" />
+    <Resource Include="images\monsters\idle_2.gif" />
+    <Resource Include="images\monsters\idle_3.gif" />
+    <Resource Include="images\monsters\idle_4.gif" />
+    <Resource Include="images\monsters\idle_5.gif" />
+    <Resource Include="images\monsters\idle_6.gif" />
+    <Resource Include="images\monsters\idle_7.gif" />
+    <Resource Include="images\monsters\idle_8.gif" />
+    <Resource Include="images\monsters\attack_8.gif" />
+    <Resource Include="images\monsters\attack_7.gif" />
+    <Resource Include="images\monsters\attack_6.gif" />
+    <Resource Include="images\monsters\attack_5.gif" />
+    <Resource Include="images\monsters\attack_4.gif" />
+    <Resource Include="images\monsters\attack_3.gif" />
+    <Resource Include="images\monsters\attack_2.gif" />
+    <Resource Include="images\monsters\attack_1.gif" />
+    <Resource Include="images\monsters\hit_1.gif" />
+    <Resource Include="images\monsters\hit_2.gif" />
+    <Resource Include="images\monsters\hit_3.gif" />
+    <Resource Include="images\fonInvet.png" />
+    <Resource Include="images\monsters\goblin\attack_1.gif" />
+    <Resource Include="images\monsters\goblin\attack_2.gif" />
+    <Resource Include="images\monsters\goblin\attack_3.gif" />
+    <Resource Include="images\monsters\goblin\attack_4.gif" />
+    <Resource Include="images\monsters\goblin\attack_5.gif" />
+    <Resource Include="images\monsters\goblin\attack_6.gif" />
+    <Resource Include="images\monsters\goblin\attack_7.gif" />
+    <Resource Include="images\monsters\goblin\attack_8.gif" />
+    <Resource Include="images\monsters\goblin\hit_1.gif" />
+    <Resource Include="images\monsters\goblin\hit_2.gif" />
+    <Resource Include="images\monsters\goblin\hit_3.gif" />
+    <Resource Include="images\monsters\goblin\idle_1.gif" />
+    <Resource Include="images\monsters\goblin\idle_2.gif" />
+    <Resource Include="images\monsters\goblin\idle_3.gif" />
+    <Resource Include="images\monsters\goblin\idle_4.gif" />
+    <Resource Include="images\monsters\goblin\idle_5.gif" />
+    <Resource Include="images\monsters\goblin\idle_6.gif" />
+    <Resource Include="images\monsters\goblin\idle_7.gif" />
+    <Resource Include="images\monsters\goblin\idle_8.gif" />
+    <Resource Include="images\monsters\troll\attack_1.gif" />
+    <Resource Include="images\monsters\troll\attack_10.gif" />
+    <Resource Include="images\monsters\troll\attack_11.gif" />
+    <Resource Include="images\monsters\troll\attack_12.gif" />
+    <Resource Include="images\monsters\troll\attack_13.gif" />
+    <Resource Include="images\monsters\troll\attack_14.gif" />
+    <Resource Include="images\monsters\troll\attack_2.gif" />
+    <Resource Include="images\monsters\troll\attack_3.gif" />
+    <Resource Include="images\monsters\troll\attack_4.gif" />
+    <Resource Include="images\monsters\troll\attack_5.gif" />
+    <Resource Include="images\monsters\troll\attack_6.gif" />
+    <Resource Include="images\monsters\troll\attack_7.gif" />
+    <Resource Include="images\monsters\troll\attack_8.gif" />
+    <Resource Include="images\monsters\troll\attack_9.gif" />
+    <Resource Include="images\monsters\troll\hit_1.gif" />
+    <Resource Include="images\monsters\troll\hit_2.gif" />
+    <Resource Include="images\monsters\troll\hit_3.gif" />
+    <Resource Include="images\monsters\troll\hit_4.gif" />
+    <Resource Include="images\monsters\troll\hit_5.gif" />
+    <Resource Include="images\monsters\troll\hit_6.gif" />
+    <Resource Include="images\monsters\troll\hit_7.gif" />
+    <Resource Include="images\monsters\troll\idle_1.gif" />
+    <Resource Include="images\monsters\troll\idle_2.gif" />
+    <Resource Include="images\monsters\troll\idle_3.gif" />
+    <Resource Include="images\monsters\troll\idle_4.gif" />
+    <Resource Include="images\monsters\troll\idle_5.gif" />
+    <Resource Include="images\monsters\troll\idle_6.gif" />
+    <Resource Include="images\death_1.gif" />
+    <Resource Include="images\death_2.gif" />
+    <Resource Include="images\death_3.gif" />
+    <Resource Include="images\death_4.gif" />
+    <Resource Include="images\death_5.gif" />
+    <Resource Include="images\death_6.gif" />
+    <Resource Include="images\death_7.gif" />
+    <Resource Include="images\death_8.gif" />
+    <Resource Include="images\death_9.gif" />
+    <Resource Include="images\monsters\g\attack_1.gif" />
+    <Resource Include="images\monsters\g\attack_10.gif" />
+    <Resource Include="images\monsters\g\attack_11.gif" />
+    <Resource Include="images\monsters\g\attack_2.gif" />
+    <Resource Include="images\monsters\g\attack_3.gif" />
+    <Resource Include="images\monsters\g\attack_4.gif" />
+    <Resource Include="images\monsters\g\attack_5.gif" />
+    <Resource Include="images\monsters\g\attack_6.gif" />
+    <Resource Include="images\monsters\g\attack_7.gif" />
+    <Resource Include="images\monsters\g\attack_8.gif" />
+    <Resource Include="images\monsters\g\attack_9.gif" />
+    <Resource Include="images\monsters\g\idle_1.gif" />
+    <Resource Include="images\monsters\g\idle_2.gif" />
+    <Resource Include="images\monsters\g\idle_3.gif" />
+    <Resource Include="images\monsters\g\idle_4.gif" />
+    <Resource Include="images\monsters\g\idle_5.gif" />
+    <Resource Include="images\monsters\g\idle_6.gif" />
+    <Resource Include="images\monsters\g\idle_7.gif" />
+    <Content Include="images\sunset-lake-pixel-moewalls-com.mp4" />
+    <Content Include="images\sunset.wmv" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

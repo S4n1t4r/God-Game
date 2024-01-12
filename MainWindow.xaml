@@ -1,0 +1,139 @@
+﻿<Window x:Class="MainMenu.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MainMenu"
+        mc:Ignorable="d"
+        Title="MainWindow" WindowState="Maximized">
+    <Window.Resources>
+        <!-- Определение стиля для кнопки с изображением -->
+        <Style x:Key="ImageButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="images/1663652027_g-10.png"/>
+        </Grid.Background>
+
+        <StackPanel x:Name="MainMenu" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="StartButton" Content="" Click="StartButton_Click" >
+                <Button.Background>
+                    <ImageBrush ImageSource="images/Start1.png"/>
+                </Button.Background>
+            </Button>
+
+            <Button x:Name="OptionsButton" Content="Options" Click="OptionsButton_Click" Width="100" Height="30"/>
+
+            <Button x:Name="ExitButton" Content="Exit" Click="ExitButton_Click" Width="100" Height="30"/>
+        </StackPanel>
+
+        <StackPanel x:Name="SettingsPanel" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
+            <TextBlock Text="Game Settings" FontSize="16" FontWeight="Bold" Margin="0 0 0 10"/>
+
+            <StackPanel>
+                <TextBlock Text="Sound Volume:"/>
+                <Slider x:Name="SoundVolumeSlider" Width="200" Minimum="0" Maximum="100" TickFrequency="10" TickPlacement="BottomRight" Margin="0 5 0 10"/>
+            </StackPanel>
+
+            <Button x:Name="SaveButton" Content="Save" Click="SaveButton_Click" Width="100" Height="30"/>
+            <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="100" Height="30"/>
+            <Button Content="Back to Main Menu" Click="BackButton_Click" Width="100" Height="30" />
+        </StackPanel>
+        <Button x:Name="Discord" Click="Button_Click" HorizontalAlignment="Left" 
+        VerticalAlignment="Top" Width="110" Height="110" Foreground="{x:Null}" 
+        BorderBrush="{x:Null}" Margin="0,0,0,0" Style="{StaticResource ImageButtonStyle}">
+            <Button.Background>
+                <ImageBrush ImageSource="images/photo2pixel_download (1).png"/>
+            </Button.Background>
+            <Button.ToolTip>
+                <ToolTip Placement="Bottom" ToolTipService.InitialShowDelay="0">
+                    <TextBlock Text="Go to Discord"/>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+        <!-- Применение стиля к кнопке GitHub -->
+        <Button Name="GitHub" Click="Button_Click2" HorizontalAlignment="Left" 
+        VerticalAlignment="Top" Width="110" Height="110" Margin="110,0,0,0" 
+        Style="{StaticResource ImageButtonStyle}" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="images/photo2pixel_download (2) (1).png"/>
+            </Button.Background>
+            <Button.ToolTip>
+                <ToolTip Placement="Bottom" ToolTipService.InitialShowDelay="0">
+                    <TextBlock Text="Go to GitHub"/>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+        
+        
+        <StackPanel x:Name="LevelSelectPanel" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
+            <Button x:Name="Level1Button" Content="Уровень 1" Click="LevelButton_Click" Width="200" Height="50" Margin="5"/>
+            <Button x:Name="Level2Button" Content="Уровень 2" Click="LevelButton_Click" Width="200" Height="50" Margin="5"/>
+            <Button x:Name="IncreaseAttackButton" Content="Увеличить урон" Click="IncreaseAttackButton_Click" />
+            
+            <Button x:Name="IncreaseDefenseButton" Content="Увеличить броню" Click="IncreaseDefenseButton_Click" />
+            <TextBlock x:Name="monsterCountTextBlock1" Text="monsterCountTextBlock"  HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="16" Height="70" Margin="0,0,0,10"  />
+            <Button x:Name="Exit2" Content="Exit" Click="Back_Click2" Width="100" Height="30"/>
+            
+        </StackPanel>
+        <Grid x:Name="myCanvas" Focusable="True" Visibility="Collapsed" Background="LightCoral">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+                <TextBlock Text="Герой" FontSize="20" />
+                <ProgressBar x:Name="playerHealthProgressBar" Width="200" Height="20" Minimum="0"  Value="100" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+                <TextBlock Text="Зарядка атаки" FontSize="20" />
+                <ProgressBar x:Name="playerAttackProgressBar" Width="200" Height="20" Minimum="0" Maximum="100" Value="0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10">
+                <TextBlock x:Name="enemyTextBlock" Text="Враг" FontSize="20" />
+                <ProgressBar x:Name="enemyHealthProgressBar" Width="200" Height="20" Minimum="0" Value="{Binding CurrentEnemy.Health}" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10">
+                <TextBlock Text="Зарядка атаки" FontSize="20" />
+                <ProgressBar x:Name="enemyAttackProgressBar" Width="200" Height="20" Minimum="0" Maximum="100" Value="0" />
+            </StackPanel>
+
+            <Canvas Grid.Row="1" x:Name="gameCanvas" Background="Transparent">
+                <Image  Name="player" Canvas.Left="454" Canvas.Top="377" Height="600" Width="650" />
+                <Image Name="enemyRect" Height="600" Canvas.Left="1054" Canvas.Top="350" Width="650"/>
+            </Canvas>
+
+            <Button x:Name="Exit" Content="Exit228" Click="Back_Click" Width="100" Height="30"/>
+            <TextBlock x:Name="monsterCountTextBlock" Text="Очки исследования: 0"  HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="16" Height="70" Margin="0,0,1700,10"  />
+
+            <DockPanel LastChildFill="True">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,100" >
+                    <Image x:Name="Item1" Width="50" Height="50" Source="images/fonInvet.png" />
+                    <Image x:Name="Item2" Width="50" Height="50" Source="images/fonInvet.png" />
+                   <Image x:Name="Item3" Width="50" Height="50" Source="images/fonInvet.png" />
+                  <Image x:Name="Item4" Width="50" Height="50" Source="images/fonInvet.png" />
+                  <Image x:Name="Item5" Width="50" Height="50" Source="images/fonInvet.png"/>
+                  <Image x:Name="Item6" Width="50" Height="50" Source="images/fonInvet.png" />
+                  <Image x:Name="Item7" Width="50" Height="50" Source="images/fonInvet.png" />
+                  <Image x:Name="Item8" Width="50" Height="50" Source="images/fonInvet.png" />
+                  <Image x:Name="Item9" Width="50" Height="50" Source="images/fonInvet.png" />
+                </StackPanel>
+            </DockPanel>
+        </Grid>
+    </Grid>
+    
+</Window>
